@@ -1,6 +1,6 @@
+twilio
 Django==1.5.1
 Markdown==2.3.1
-PIL==1.1.7
 Pillow==2.1.0
 amqp==1.0.13
 anyjson==0.3.3
@@ -9,12 +9,11 @@ billiard==2.7.3.31
 celery==3.0.21
 distribute==0.6.24
 django-celery==3.0.21
-django-xhtml2pdf==0.0.4.dev0
+django-xhtml2pdf
 gunicorn==17.5
 html5lib==1.0b3
 kombu==2.5.12
 psycopg2==2.5.1
-pyPdf==1.13
 python-dateutil==2.1
 pytz==2013b
 reportlab==2.7
