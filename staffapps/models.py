@@ -70,7 +70,7 @@ class StaffApp(models.Model):
     phone_number = models.CharField(max_length=20)
 
     attend_training = models.BooleanField(verbose_name="Are you available to attend all training sessions?", help_text="<a href=\"/staff-key-dates\">View training session dates &raquo;</a>")
-    attend_mcmun = models.BooleanField(verbose_name="Are you available to attend McMUN 2014 (Thursday, January 23, 2014 to Sunday, January 26, 2014)?")
+    attend_mcmun = models.BooleanField(verbose_name="Are you available to attend McMUN 2015 (Thursday, January 22, 2015 to Sunday, January 25, 2015)?")
 
 
 class CoordinatorApp(StaffApp):

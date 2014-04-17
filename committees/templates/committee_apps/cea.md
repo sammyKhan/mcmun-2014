@@ -18,9 +18,9 @@ Council of Economic Advisers at this year’s McMUN.
 Sincerely,
 
 Brendan Sheehan  
-USG Committees, McMUN 2014  
+USG Committees, McMUN 2015  
 <committees@mcmun.org>
 
 Nikhil Garg
-Chair, CEA, McMUN 2014  
+Chair, CEA, McMUN 2015  
 <nikhil.garg@mail.mcgill.ca>

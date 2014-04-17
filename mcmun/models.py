@@ -136,7 +136,7 @@ class RegisteredSchool(models.Model):
 
     def send_success_email(self):
         # Send out email to user (receipt of registration)
-        receipt_subject = 'Successful registration for McMUN 2014'
+        receipt_subject = 'Successful registration for McMUN 2015'
         receipt_message_filename = 'registration_success'
         receipt_context = {
             'first_name': self.first_name,
@@ -169,7 +169,7 @@ class RegisteredSchool(models.Model):
 
         if self.num_pub_crawl > 0 :
             # Send an email containing the invoice (just in the email body)
-            subject = 'Invoice for McMUN 2014 Pub Crawl registration'
+            subject = 'Invoice for McMUN 2015 Pub Crawl registration'
             filename = 'pub_crawl'
             context = {
                 'first_name': self.first_name,

@@ -4,7 +4,7 @@ Thank you for your interest in applying for the Ad-Hoc Committee of the
 Secretary General. This committee will be run by some of McGill’s finest and
 most experienced staffers. Moreover, with little background preparation, the
 Ad-Hoc Committee is one of the most challenging and intensive committees offered
-at McMUN 2014. On that note, Team Committees and the Ad-Hoc dais encourage the
+at McMUN 2015. On that note, Team Committees and the Ad-Hoc dais encourage the
 most experienced delegates to apply.
 
 Below you will find a questionnaire that will allow us to prepare a more
@@ -17,9 +17,9 @@ Ad-Hoc at this year’s McMUN.
 Sincerely,
 
 Brendan Sheehan  
-USG Committees, McMUN 2014  
+USG Committees, McMUN 2015  
 <committees@mcmun.org>
 
 Felicia Mazzarello  
-Chair, Ad-Hoc, McMUN 2014  
+Chair, Ad-Hoc, McMUN 2015  
 <felicia.mazzarello@mail.mcgill.ca>
