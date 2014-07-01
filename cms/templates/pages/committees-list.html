@@ -7,7 +7,7 @@
     <ul id="committees-grid">
         {% for committee in category.committee_set.all %}
         {% if committee.is_visible %}
-            <li><a href="{% url 'committee_view' committee.slug %}"><img src="{{ STATIC_URL }}img/committees/{{ committee.slug }}.png" /><br />{{ committee.name }}</a></li>
+            <li><img src="{{ STATIC_URL }}img/committees/{{ committee.slug }}.png" /><br />{{ committee.name }}</li>
         {% else %}
             {% if not committee.is_assignable %}
                 <li>
