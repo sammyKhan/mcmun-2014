@@ -35,7 +35,7 @@ $(document).ready(function() {
             '</object>' +
             '</div>' +
             '<div class="close">×</div>';
-        $('body').append(overlay);
+      //  $('body').append(overlay);
 
         if (isLocalStorageSupported) {
             // Don't force the user to watch the video again
