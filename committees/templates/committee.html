@@ -43,8 +43,10 @@
 {% else %}
     {{ committee.description|markdown:"footnotes,def_list,tables" }}
 
-    <h2>Dais</h2>
+    {% if False %}
+      <h2>Dais</h2>
 
-    {% include dais_template %}
+      {% include dais_template %}
+      {% endif %}
 {% endif %}
 {% endblock %}
