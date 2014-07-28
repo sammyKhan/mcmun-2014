@@ -104,7 +104,7 @@ class RegisteredSchool(models.Model):
 
     def get_delegate_fee(self):
         if self.is_international():
-            delegate_fee = 50
+            delegate_fee = 60
         else:
             delegate_fee = 85 if self.use_priority else 95
 

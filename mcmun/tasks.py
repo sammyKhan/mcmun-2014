@@ -52,7 +52,7 @@ def generate_invoice(school_id, username, password):
     invoice_subject = 'Invoice for McMUN 2015'
     invoice_message_filename = 'invoice'
 
-    invoice_id = 'MC13' + str(school_id).zfill(3)
+    invoice_id = 'MC15' + str(school_id).zfill(3)
 
     pdf_context = {
         'invoice_id': invoice_id,
