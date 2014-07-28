@@ -31,5 +31,5 @@ class Command(BaseCommand):
         lazy_schools = S.objects.filter(
             is_approved=True,
             committeeassignment__delegateassignment__delegate_name__isnull=True)
-        print "Schools for Loreena to hustle"
+        print "Schools for Marta to hustle"
         print ', '.join(school.email for school in lazy_schools.distinct())

@@ -29,6 +29,7 @@ class RegistrationForm(forms.ModelForm):
             'use_online_payment',
             'use_tiered',
             'use_priority',
+            'single_delegate',
             'want_mobile_app',
         )
 
