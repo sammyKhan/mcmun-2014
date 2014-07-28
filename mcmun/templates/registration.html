@@ -144,8 +144,14 @@ href="mailto:chargee@mcmun.org">chargee@mcmun.org</a>.</p>
                 1.</p>
             </dt>
             <dd>{{ form.use_priority }}</dd>
-            {% endcomment %}
-
+           {% endcomment %}
+           <dt>
+           <label for="id_single_delegate">Roommate Matching:</label>
+              <p>
+              Are you a single delegate and interested in splitting a room with other delegates? Let us know your preferences:
+              </p>
+            </dt>
+            <dd>{{ form.single_delegate }}</dd>
             <dt>
                 <label for="id_want_mobile_app">Mobile app:</label>
                 <p>
