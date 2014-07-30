@@ -31,6 +31,12 @@ class RegisteredSchool(models.Model):
     use_online_payment = models.BooleanField()
     use_tiered = models.BooleanField(default=False)
     use_priority = models.BooleanField(default=False)
+    match_prefs = (
+            ('N', 'No Thanks'),
+            ('F', 'Match me with other Females'),
+            ('M', 'Match me with other Males'),
+    )
+    single_delegate = models.CharField(max_length=1, choices=match_prefs, default='N')
     want_mobile_app = models.BooleanField(default=False, verbose_name="Would you be interested in substituting your printed delegate handbook with an integrated mobile app? (iOS and Android)")
 
     amount_paid = models.DecimalField(default=Decimal(0), max_digits=6, decimal_places=2)
