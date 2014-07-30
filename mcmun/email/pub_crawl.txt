@@ -6,7 +6,7 @@ Number of delegates registered for pub crawl: %(num_delegates)d
 Cost per delegate (including $0.50 processing fee): $%(cost_per_delegate).2f CAD
 Total cost: %(total_cost)s
 
-Our USG-Finance, Eileen Bui, will be in touch with you shortly with detailed
+Our USG-Finance, Gautham Krishnaraj, will be in touch with you shortly with detailed
 payment instructions (via PayPal).
 
 If you have any questions, or need to make any changes, please contact Marta Canneri
