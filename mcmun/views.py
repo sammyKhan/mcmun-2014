@@ -100,9 +100,9 @@ def dashboard(request):
         if datetime.datetime.now() < prefs_deadline:
             committees_form = CommitteePrefsForm(instance=school)
     elif request.user.is_staff:
-        # Show a random school (the third one registered)
+        # Show a random school (the first one registered)
         # Admins can see the dashboard, but can't fill out any forms
-        school = RegisteredSchool.objects.get(pk=3)
+        school = RegisteredSchool.objects.get(pk=1)
 
     com_assignments = school.committeeassignment_set.all()
     formset = CommitteeAssignmentFormset(queryset=com_assignments, prefix='lol')
