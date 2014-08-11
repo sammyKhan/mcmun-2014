@@ -172,7 +172,7 @@ $(document).ready(function() {
                     delegateFee = 95;
                 break;
                 case 'international':
-                    delegateFee = 50;
+                    delegateFee = 60;
                 break;
             }
 
