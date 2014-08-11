@@ -8,8 +8,8 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.static import serve
 
 from committees.models import Committee, position_paper_upload_path
-from committees.forms import AdHocAppForm, DEFCONAppForm, ICCAppForm, \
-     CEAAppForm, UFCAppForm, GreatEmpireAppForm, AwardAssignmentFormset
+from committees.forms import AdHocAppForm, EnronAppForm, CriminalCourtAppForm, \
+     NcaaAppForm, NintendoAppForm, AwardAssignmentFormset
 from committees.utils import get_committee_from_email
 
 
@@ -43,12 +43,11 @@ def application(request, slug):
     committee = get_object_or_404(Committee, slug=slug)
 
     app_forms = {
-        'ad-hoc': AdHocAppForm,
-        'defcon': DEFCONAppForm,
-        'ufc': UFCAppForm,
-        'cea': CEAAppForm,
-        'icc': ICCAppForm,
-        'great-empire': GreatEmpireAppForm,
+        'adhoc': AdHocAppForm,
+        'enron': EnronAppForm,
+        'ncaa': NcaaAppForm,
+        'nintendo': NintendoAppForm,
+        'icc': CriminalCourtAppForm
     }
 
     if slug in app_forms:

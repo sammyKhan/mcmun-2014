@@ -1,5 +1,5 @@
-from committees.models import AdHocApplication, DEFCONApplication, \
-     ICCApplication, CEAApplication, UFCApplication, GreatEmpireApplication, \
+from committees.models import AdHocApplication, EnronApplication, \
+     CriminalCourtApplication, NcaaApplication, NintendoApplication, \
      CommitteeAssignment, DelegateAssignment, AwardAssignment
 
 from django import forms
@@ -10,29 +10,24 @@ class AdHocAppForm(forms.ModelForm):
         model = AdHocApplication
 
 
-class DEFCONAppForm(forms.ModelForm):
+class EnronAppForm(forms.ModelForm):
     class Meta:
-        model = DEFCONApplication
+        model = EnronApplication
 
 
-class ICCAppForm(forms.ModelForm):
+class CriminalCourtAppForm(forms.ModelForm):
     class Meta:
-        model = ICCApplication
+        model = CriminalCourtApplication
 
 
-class CEAAppForm(forms.ModelForm):
+class NcaaAppForm(forms.ModelForm):
     class Meta:
-        model = CEAApplication
+        model = NcaaApplication
 
 
-class UFCAppForm(forms.ModelForm):
+class NintendoAppForm(forms.ModelForm):
     class Meta:
-        model = UFCApplication
-
-
-class GreatEmpireAppForm(forms.ModelForm):
-    class Meta:
-        model = GreatEmpireApplication
+        model = NintendoApplication
 
 
 AwardAssignmentFormset = forms.models.modelformset_factory(AwardAssignment,
