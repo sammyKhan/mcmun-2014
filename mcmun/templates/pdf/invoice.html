@@ -111,41 +111,57 @@
             .important p {
                 padding-left: 10px;
             }
+            
+            .separator { 
+              -pdf-keep-with-next: false; font-size: 6pt; 
+            }
         </style>
     </head>
     <body>
         <div id="wrap">
-            {% comment %}Super silly but xhtml2pdf won't render it properly otherwise. Something to do with line-height perhaps?{% endcomment %}
+            {% comment %} Not the best html, but couldn't get xhtml2pdf to work otherwise {% endcomment %}
             <p>&nbsp;</p>
-            <div class="right-align">
-                    Invoice #: {{ invoice_id }}
-                    <br />
-                    {% now "DATE_FORMAT" %}
-            </div>
-
-            <p>&nbsp;</p>
+            <table>
+              <tr>
+                <td class="left-align">{% now "DATE_FORMAT" %}</td>
+                <td class="right-align">Invoice Number: {{ invoice_id }}</td>
+              </tr>
+            </table>
 
             <div class="center-align">
-                <h2>Invoice for McGill Model United Nations Assembly 2015</h2>
-                <h3>3480 McTavish, Suite 410 :: Montr&eacute;al, QC H3A 1X9 :: Canada</h3>
-                <p>+1 (514) 398 6816 :: www.mcmun.org</p>
+              <h2>Invoice: McGill Model United Nations Assembly 2015</h2>
+              <h3>3480 McTavish, Suite 410 :: Montr&eacute;al, QC H3A 1X9 :: Canada</h3>
+              <p>+1 (514) 398 6816 :: www.mcmun.org</p>
             </div>
 
-            <div>
-                <br />
-                <h3><strong>Recipient</strong></h3>
-                <p>
-                    A/S: {{ school.first_name }} {{ school.last_name }}
-                    <br />
-                    {{ school.school_name }}
-                    <br />
-                    {{ school.address }}
-                    <br />
-                    {{ school.get_country_display }}
-                    <br />
-                    {{ school.phone_number }}
-                </p>
-            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <table>
+              <tr>
+                <th width="55%" align="left"><h3><strong>IRSAM Inc.</strong></h3></th>
+                <th width="45%" align="right"><h3><strong>Recipient</strong></h3></th>
+              </tr>
+              <tr>
+                <td>Business Number: 889341327RC0001</td>
+                <td class="right-align">A/S: {{ school.first_name }} {{ school.last_name }}</td>
+              </tr>
+              <tr>
+                <td>GST: 889341327RP0001</td>
+                <td class="right-align">{{ school.school_name }}</td>
+              </tr>
+              <tr>
+                <td>ID Number: 1086649311IC</td>
+                <td class="right-align">{{ school.address }}</td>
+              </tr>
+              <tr>
+                <td>QST: 1086649311TQ0001</td>
+                <td class="right-align">{{ school.get_country_display }}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="right-align">{{ school.phone_number }}</td>
+              </tr>
+            </table>
 
             <table class="costs">
                 <tr class="bottom-border">
@@ -218,6 +234,8 @@
                 {% endif %}
             </table>
 
+            <p class="separator">&nbsp;</p>
+
             <h2>Payment instructions</h2>
             {% if school.use_online_payment %}
             <p>You have indicated that you wish to pay by <strong>online payment</strong>. The total amounts above include the 3% online payment convenience fee. You will receive a PayPal invoice via email shortly containing a link to the PayPal payment page, from which you can make the payment. If you have any questions about the online payment process, contact chargee@mcmun.org.</p>
@@ -281,7 +299,6 @@
                     </td>
                 </tr>
             </table>
-            <h2>
         </div>
     </body>
 </html>
