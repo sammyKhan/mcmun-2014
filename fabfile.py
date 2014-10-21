@@ -5,8 +5,11 @@ from fabric.context_managers import lcd
 def less():
     local("lessc mcmun/static/css/mcmun.less -x > mcmun/static/css/mcmun.css")
 
-def up():
+def dev_up():
     local("python manage.py runserver")
+
+def prod_up():
+    local("python /var/www/mcmun/bin/gunicorn -c ../gunicorn_config.py mcmun.wsgi > ./tmp/gunicorn.log 2>&1 & echo $! > ./tmp/gunicorn.pid &")
 
 def dump():
     local("python manage.py dumpdata --indent=4 > backup.json")
@@ -14,8 +17,8 @@ def dump():
 def static():
     local("python manage.py collectstatic --noinput")
 
-def restart():
-    local('kill -HUP `cat /tmp/gunicorn.pid`')
+def prod_restart():
+    local('kill -HUP `cat ./tmp/gunicorn.pid`')
 
 def stats():
     local('python manage.py get_registration_stats')
