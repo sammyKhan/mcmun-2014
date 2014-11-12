@@ -1,10 +1,7 @@
 #menu-wrapper {
-    background-color: @red;
-    border-bottom-style: solid;
-    border-bottom-color: @offWhite;
-    border-bottom-width: 1px;
+    #gradient(#FFF, #EEE);
+    .container;
     padding: 0 30px;
-    white-space: nowrap;
 }
 
 #menu {
@@ -12,13 +9,14 @@
     z-index: 3;
     position: relative;
     height: @menuHeight;
+    .container;
     ul {
         list-style-type: none;
     }
     > ul li {
         ul li a {
             // A hack to make the hover height the same
-            height: @menuHeight - 5;
+            height: 35px;
         }
 
         .inline-block;
@@ -29,10 +27,11 @@
             font-size: 1.2em;
             line-height: @menuHeight;
             //font-weight: bold;
+            text-transform: lowercase;
             text-decoration: none;
             color: @menuText;
             &:hover {
-                background: lighten(@red, 10%);
+                background: lighten(@lighterGrey, 10%);
             }
         }
         ul {
@@ -44,13 +43,13 @@
             top: @menuHeight;
         }
         > ul li {
-            height: @menuHeight - 5 !important;
+            height: 35px !important;
             display: block;
-            background: lighten(@red, 10%);
+            background: lighten(@lighterGrey, 10%);
             text-align: left;
             font-size: 9px;
             a:hover {
-                background: lighten(@red, 5%);
+                background: lighten(@lighterGrey, 5%);
             }
         }
     }
