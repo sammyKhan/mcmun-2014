@@ -180,7 +180,9 @@ dl {
         padding-top: 20px;
         width: 200px;
         clear: left;
-        font-weight: bold;
+        label {
+          font-weight: bold;
+        }
     }
 }
 
@@ -688,4 +690,21 @@ hr {
         -ms-transform: skew(5deg) rotate(5deg);
         -o-transform: skew(5deg) rotate(5deg);
         transform: skew(5deg) rotate(5deg);
+}
+
+.btn {
+  background: #bd2227;
+  background-image: linear-gradient(to bottom, #bd2227, #941c20);
+  border-radius: 20px;
+  color: @white;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #d4282e;
+  background-image: linear-gradient(to bottom, #d4282e, #b0252a);
+  text-decoration: none;
+  color: @white;
 }
