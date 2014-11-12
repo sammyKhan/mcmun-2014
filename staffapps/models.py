@@ -43,7 +43,6 @@ logistical_choices = (
     ('group-leader', 'Group leader (Pub Crawl)'),
     ('venue-staff', 'Venue staff (Pub Crawl)'),
     ('photographer', 'Photographer'),
-    ('writer', 'Writer for the Ambassador'),
     ('food', 'Food staff'),
 )
 
@@ -99,7 +98,7 @@ class CoordinatorApp(StaffApp):
 
 
 class CommitteesApp(StaffApp):
-    preferred_committee_1 = models.ForeignKey(Committee, related_name='+')
+    preferred_committee_1 = models.ForeignKey(Committee, related_name='+', help_text="Note: Applications to GA, ECOSOC or SA are for the Committee Director position. Applications to crisis committees are for the Crisis Staffer/Liaison position")
     preferred_committee_2 = models.ForeignKey(Committee, related_name='+')
     preferred_committee_3 = models.ForeignKey(Committee, related_name='+')
 
@@ -124,9 +123,10 @@ class LogisticalApp(StaffApp):
     # Need a different verbose_name (mentions carnival, frosh, etc)
     mun_experience = models.TextField(verbose_name="Please describe any previous Model United Nations experience you have. If you do not have any previous Model United Nations experience, please describe any relevant experience (e.g., debating, public speaking, event planning, frosh or carnival leader, etc). 150 words max.")
 
+    why_these = models.TextField(verbose_name="Why are you interested in these positions and why do you think you would be good in the roles?")
+
     # Not going to go to the trouble of making this show up automatically
     photography_experience = models.TextField(verbose_name="If you indicated that you're interested in the photographer position, please list any relevant photography experience, and indicate whether or not you have your own equipment. If so, what kind of camera do you own (SLR, brand, model), what lenses, and does it have an external flash? 150 words max.", null=True, blank=True)
-    writing_sample = models.TextField(verbose_name="If you're interested in writing for The Ambassador, please copy and paste a sample of your writing here.", null=True, blank=True)
     page_preferences = models.TextField(verbose_name="If you're interested in being a page, please specify the order of your preferred committee types (GAs, ECOSOCs, SAs). If you have any specific committees in mind, please list them here. If you are interested in being in a Crisis committee, please fill out the comittees staff application instead.", null=True, blank=True)
 
     another_position = models.BooleanField(verbose_name="Are you amenable to another position (i.e. an alternative logistical staff position) if not selected for one of the above positions?")
