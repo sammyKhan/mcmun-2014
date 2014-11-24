@@ -1,0 +1,30 @@
+<!--
+  This template loads for the 'position' state (app.js)
+-->
+<ion-view title="Settings" right-buttons="rightButtons">
+  <ion-content has-header="true" has-tabs="false">
+    <div class="list list-inset" ng-if="authorized">
+    <p>You must be assigned to a specific committee with a specific position before you fill out this form. Note that once you submit the form, you will be sent to the specific committee as a delegate. </p>
+      <label class="item item-input">
+        <span class="input-label">Your Committee:</span>
+        <select ng-model="$parent.user.committee" ng-options="c.name for c in committees"></select>
+      </label>
+
+      <label class="item item-input" ng-if="user.committee && !secretariat">
+        <span class="input-label">Your Position:</span>
+        <select ng-model="$parent.user.position" ng-options="p as p for p in user.committee.positions | orderBy" required></select>
+      </label>
+      <label class="item item-input" ng-if="secretariat">
+        <span class="input-label">Your Position:</span>
+          <input id="position" type="text" name="position" placeholder="" class="form-control" ng-model="user.position"></input>
+      </label>
+    </div>
+    <div class="list list-inset" ng-if="!authorized">
+    <p>Below is the committee assignment you entered when you first signup. You cannot change your committee assignment. If you encounter any mistakes, please email USG IT (Lucille Hua) at it@ssuns.org for further assistance.</p>
+      <label class="item" ng-if="user.committee">
+        <p>Your Committee: {{ committeename }}</p>
+        <p>Your Position: {{ user.position }}</p>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>
