@@ -72,29 +72,29 @@ angular.module('mcmun.services', [])
 
 .factory('AuthService', [
     '$http', 'SessionService',
- 
+
     function($http, SessionService) {
       var AuthService = {
-        
+
         login: function(callback) {
           $http({ method: 'GET', url: window.app.apiBaseUrl + '/users/me' })
-          
+
           // User Successfully Authenticates
           .success(function(data, status, headers, config) {
             SessionService.authenticated = true;
             SessionService.user = data;
             if (typeof(callback) === typeof(Function)) callback();
           })
-          
+
           // Not logged in
           .error(function(data, status, headers, config) {
             console.log('Error authenticating');
-            SessionService.authenticated = false; 
+            SessionService.authenticated = false;
             if (typeof(callback) === typeof(Function)) callback();
-          });    
+          });
         }
       };
- 
+
       return AuthService;
     }
   ])
