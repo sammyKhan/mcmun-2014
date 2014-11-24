@@ -5,8 +5,8 @@ tmp
 uploads
 *~
 mcmun/conf.py
-*.json
 *.csv
 *.css
 updated_awards.pdf
 updated_awards.svg
+*.DS_Store
