@@ -6,7 +6,7 @@ uploads
 *~
 mcmun/conf.py
 *.csv
-*.css
+mcmun/static/*.css
 updated_awards.pdf
 updated_awards.svg
 *.DS_Store

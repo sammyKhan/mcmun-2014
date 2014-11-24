@@ -2,20 +2,7 @@ angular.module('mcmun.controllers',[])
 
 // ----- Main Controller
 
-.controller('MainCtrl', function($scope, $state, AuthService, SessionService, $location, $ionicLoading) {
-  AuthService.login(function() {
-    $scope.session = SessionService;
-    $scope.$watch('session', function() {
-      if($scope.session.user.name == null){
-        $state.go('login');
-      }
-      else {
-        if (window.location.pathname == '/'){
-            addToHomescreen();
-        }
-      }
-    });
-  });
+.controller('MainCtrl', function($scope, $state, SessionService, $location, $ionicLoading) {
 
   $scope.showLoading = function() {
     $scope.loading = $ionicLoading.show({

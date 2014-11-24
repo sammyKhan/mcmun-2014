@@ -1,5 +1,5 @@
 // Ionic Starter App
-window.app = angular.module('mcmun', ['ionic', 'mcmun.controllers'])
+window.app = angular.module('mcmun', ['ionic', 'mcmun.controllers', 'mcmun.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -25,12 +25,6 @@ window.app = angular.module('mcmun', ['ionic', 'mcmun.controllers'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
-    .state('login', {
-      url: "/login",
-      templateUrl: "templates/login.html",
-      controller: "LoginCtrl"
-    })
 
     .state('delegates', {
        url: '/delegates?committeeId',
