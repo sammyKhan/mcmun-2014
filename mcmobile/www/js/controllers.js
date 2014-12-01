@@ -100,7 +100,7 @@ angular.module('mcmun.controllers',[])
       $scope.session.user.assigned = false;
     }
     else $scope.session.user.assigned = true;
-  } 
+  }
   $scope.assigned = $scope.session.user.assigned;
   // Quick hack: since we don't expect many users at first, load list of all users.
   $scope.committeeId = {};
@@ -133,7 +133,7 @@ angular.module('mcmun.controllers',[])
     var result = loadData();
 
     result.messages.$promise.then(function(){
-      $scope.$broadcast('scroll.refreshComplete');   
+      $scope.$broadcast('scroll.refreshComplete');
    });
   }
 
@@ -175,13 +175,13 @@ angular.module('mcmun.controllers',[])
 
     $scope.authorized = 1;
     $scope.secretariat = 1;
-    if($scope.user.roles.indexOf("secretariat") != -1) 
+    if($scope.user.roles.indexOf("secretariat") != -1)
     {
       $scope.authorized = 1;
       $scope.secretariat = 1;
     }
 
-    if($scope.user.committee!=null && !$scope.authorized) 
+    if($scope.user.committee!=null && !$scope.authorized)
     {
       var committeename = CommitteeService.refreshItem($scope.user.committee, function(data) {
         $scope.committeename = data.name;
@@ -224,7 +224,7 @@ angular.module('mcmun.controllers',[])
 // ----- Messages
 
 .controller('MessagesCtrl', function($scope, $state, $stateParams, $ionicScrollDelegate, CommitteeService) {
-    
+
   $scope.committeeId = {};
   if ($stateParams.committeeId) {
     $scope.committeeId = $stateParams.committeeId;
@@ -232,7 +232,7 @@ angular.module('mcmun.controllers',[])
   else {
     $scope.committeeId = $scope.session.user.committee;
   }
-  
+
   $scope.loaded = false;
   var loadData = function(cb){
     var result = CommitteeService.refreshItem($scope.committeeId, function(data){
@@ -256,13 +256,13 @@ angular.module('mcmun.controllers',[])
       }
       if(scroll) $ionicScrollDelegate.scrollBottom();
     });
-  }, 10*1000); 
+  }, 10*1000);
 
   $scope.onRefresh = function(){
     var result = loadData();
 
     result.messages.$promise.then(function(){
-      $scope.$broadcast('scroll.refreshComplete');   
+      $scope.$broadcast('scroll.refreshComplete');
     });
   }
 
