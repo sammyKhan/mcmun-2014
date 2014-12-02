@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from mcmun.models import RegisteredSchool, ScholarshipApp, SecretariatMember, \
-    Coordinator
+    Coordinator, ScheduleItem
 
 
 class RegisteredSchoolAdmin(admin.ModelAdmin):
@@ -13,8 +13,13 @@ class RegisteredSchoolAdmin(admin.ModelAdmin):
     exclude = ('account',)
     search_fields = ('school_name', 'email')
 
+class ScheduleItemAdmin(admin.ModelAdmin):
+    ordering = ['start_time']
+    list_display = ('name', 'start_time', 'end_time', 'is_visible')
+
 
 admin.site.register(RegisteredSchool, RegisteredSchoolAdmin)
 admin.site.register(ScholarshipApp)
 admin.site.register(SecretariatMember)
 admin.site.register(Coordinator)
+admin.site.register(ScheduleItem, ScheduleItemAdmin)

@@ -268,6 +268,13 @@ class Coordinator(OrganisingMember):
         return self.name
 
 
+class ScheduleItem(models.Model):
+    name = models.CharField(max_length=100)
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    is_visible = models.BooleanField(default=False)
+
+
 @receiver(models.signals.pre_save, sender=RegisteredSchool, dispatch_uid="approve_schools")
 def approve_schools(sender, instance, **kwargs):
     """
