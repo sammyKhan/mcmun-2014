@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Schedule</h1>
+<strong></strong>
+
+{% for date in dates %}
+  <h2>{{ date.date_str }}</h2>
+
+  <dl class="schedule">
+      {% for item in date.items %}
+        <dt>{{ item.name }}</dt>
+        <dd>{{ item.start_time }}-{{ item.end_time }}</dd>
+      {% endfor %}
+  </dl>
+{% endfor %}
+
+<br clear="all" />
+<br />
+
+<p><em>Times are approximate and are subject to change. Please be advised that committee sessions will have staggered start and end times.</em></p>
+
+{% endblock %}
