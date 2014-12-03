@@ -83,7 +83,10 @@ def schedule(request):
     date_list = [{"date_str": date, "items": dates[date]} for date in dates]
     date_list.sort(key=lambda d: d["date_str"][-2:])
 
-    data = { "dates": date_list }
+    data = { 
+            "dates": date_list, 
+            "title": "Schedule",
+    }
     return render(request, "schedule.html", data)
 
 
