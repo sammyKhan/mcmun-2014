@@ -41,10 +41,18 @@
         </a>
     </p>
 {% else %}
+    <h2>Introduction</h2>
     {{ committee.description|markdown:"footnotes,def_list,tables" }}
 
-      <h2>Dais</h2>
+    {% if committee.bg_url %}
+      <h2>Background Guide</h2>
+      <div class="center-align">
+        <a href="{{ committee.bg_url }}"><img class="bg-cover" src="/static/img/mcmun-brochure-cover.png" alt="McMUN brochure cover"></a>
+      </div>
+    {% endif %}
 
-      {% include dais_template %}
+    <h2>Dais</h2>
+
+    {% include dais_template %}
 {% endif %}
 {% endblock %}
