@@ -32,8 +32,10 @@ class Committee(models.Model):
     is_assignable = models.BooleanField(default=True)
     # The user (usually [slug]@mcmun.org) who can manage this committee.
     manager = models.ForeignKey(User, null=True, blank=True)
-    # The dropbox url to the background guide
+    # The dropbox url to the first background guide
     bg_url = models.CharField(max_length=200, verbose_name="Background Guide URL")
+    # The dropbox url to the second background guide
+    bg_url2 = models.CharField(max_length=200, verbose_name="Secondary Backgroun Guide (Joint Committees)")
 
     class Meta:
         ordering = ('category', 'id')

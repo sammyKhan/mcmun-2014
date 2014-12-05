@@ -47,7 +47,10 @@
     {% if committee.bg_url %}
       <h2>Background Guide</h2>
       <div class="center-align">
-        <a href="{{ committee.bg_url }}"><img class="bg-cover" src="/static/img/mcmun-brochure-cover.png" alt="McMUN brochure cover"></a>
+        <a href="{{ committee.bg_url }}"><img class="bg-cover" src="{{ STATIC_URL }}img/committees/{{ committee.slug }}_cover.png" alt="Background guide"></a>
+        {% if committee.bg_url2 %}
+        <a href="{{ committee.bg_url }}"><img class="bg-cover" src="{{ STATIC_URL }}img/committees/{{ committee.slug }}_cover2.png" alt="Background guide"></a>
+        {% endif %}
       </div>
     {% endif %}
 
