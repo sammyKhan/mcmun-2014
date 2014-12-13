@@ -18,7 +18,6 @@ class Command(BaseCommand):
 
         file = open(filepath)
         reader = csv.reader(file, quotechar='"')
-        next(reader)
         for row in reader:
             country = row[0]
 
@@ -38,7 +37,7 @@ class Command(BaseCommand):
                     committee = committees[committee_slug]
                     num_cell = row[i + 1]
 
-                    if num_cell != "0" or len(num_cell) == 0:
+                    if num_cell != "0" and len(num_cell) != 0:
                         # Create the committee assignment
                         num_delegates = int(num_cell[0])
                         school.committeeassignment_set.create(
@@ -48,6 +47,6 @@ class Command(BaseCommand):
                             is_voting=is_voting,
                         )
             except RegisteredSchool.DoesNotExist:
-                print(school_name)
+                print(row)
             except Error, e:
-                print(e)
+                print(row)
