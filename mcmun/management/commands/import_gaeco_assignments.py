@@ -18,6 +18,7 @@ class Command(BaseCommand):
 
         file = open(filepath)
         reader = csv.reader(file, quotechar='"')
+        next(reader)
         for row in reader:
             country = row[0]
 
@@ -27,20 +28,26 @@ class Command(BaseCommand):
                 country = country[:-1]
                 is_voting = False
 
-            columns = ['aging', 'untc', 'unhrc', 'afdb', 'icao']
-            school_name = row[7]
-            school = RegisteredSchool.objects.get(school_name=school_name)
+            columns = ['specpol', 'legal', 'unesco', 'iaea', 'cnd', 'wto', 'unsc']
+            school_name = unicode(row[8], 'utf-8')
+            if school_name == "":
+                continue
+            try:
+                school = RegisteredSchool.objects.get(school_name=school_name)
+                for i, committee_slug in enumerate(columns):
+                    committee = committees[committee_slug]
+                    num_cell = row[i + 1]
 
-            for i, committee_slug in enumerate(columns):
-                committee = committees[committee_slug]
-                num_cell = row[i + 2]
-
-                if num_cell:
-                    # Create the committee assignment
-                    num_delegates = int(num_cell[0])
-                    school.committeeassignment_set.create(
-                        committee=committee,
-                        assignment=country,
-                        num_delegates=num_delegates,
-                        is_voting=is_voting,
-                    )
+                    if num_cell != "0" or len(num_cell) == 0:
+                        # Create the committee assignment
+                        num_delegates = int(num_cell[0])
+                        school.committeeassignment_set.create(
+                            committee=committee,
+                            assignment=country,
+                            num_delegates=num_delegates,
+                            is_voting=is_voting,
+                        )
+            except RegisteredSchool.DoesNotExist:
+                print(school_name)
+            except Error, e:
+                print(e)
