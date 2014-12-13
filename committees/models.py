@@ -33,9 +33,9 @@ class Committee(models.Model):
     # The user (usually [slug]@mcmun.org) who can manage this committee.
     manager = models.ForeignKey(User, null=True, blank=True)
     # The dropbox url to the first background guide
-    bg_url = models.CharField(max_length=200, verbose_name="Background Guide URL")
+    bg_url = models.CharField(max_length=200, verbose_name="Background Guide URL", null=True, blank=True)
     # The dropbox url to the second background guide
-    bg_url2 = models.CharField(max_length=200, verbose_name="Secondary Backgroun Guide (Joint Committees)")
+    bg_url2 = models.CharField(max_length=200, verbose_name="Secondary Backgroun Guide (Joint Committees)", null=True, blank=True)
 
     class Meta:
         ordering = ('category', 'id')

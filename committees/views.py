@@ -71,7 +71,7 @@ def application(request, slug):
         form = app_form
 
     data = {
-        'deadline': 'November 18th',
+        'deadline': 'November 16th',
         'title': 'Application for %s' % committee.name,
         'intro_template': 'committee_apps/%s.md' % slug,
         'committee': committee,
