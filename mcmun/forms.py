@@ -40,6 +40,11 @@ class RegistrationForm(forms.ModelForm):
         else:
             return phone_number
 
+    def clean_school_name(self):
+        # remove trailing whitespace
+        school_name = self.cleaned_data['school_name']
+        return school_name.strip()
+
 
 class ScholarshipForm(RegistrationForm):
     class Meta:
