@@ -1,0 +1,12 @@
+{% block content %}
+  {% for category in categories_list %}
+    <div class="item item-divider">{{ category.name }}</div>
+      <div class="list">
+      {% for committee in category.committees %}
+        <a class="item item-avatar item-avatar-committee" href="x">{{ committee.name }}
+          <img src="http://mcmun.org/{{ STATIC_URL }}img/committees/{{ committee.slug}}.png"></a> 
+      {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

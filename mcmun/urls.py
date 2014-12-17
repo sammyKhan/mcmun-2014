@@ -28,5 +28,6 @@ urlpatterns = patterns('',
     url(r'^password_success$', 'django.contrib.auth.views.password_change_done', {'template_name': 'password_success.html'}, name="password_success"),
     url(r'^position-papers/(?P<file_name>[^/]+)', 'committees.views.serve_papers'),
     url(r'^search', 'search.views.search', name='search'),
+    url(r'^m/', include('mcmobile.urls')),
     url(r'^', include('cms.urls')),
 )

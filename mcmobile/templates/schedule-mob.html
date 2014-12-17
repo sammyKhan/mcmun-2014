@@ -1,0 +1,8 @@
+{% block content %}
+  {% for date in dates %}
+    <div class="itinerary"><b>{{ date.date_str }}</b></div>
+    {% for item in date.items %}
+      <p>{{ item.start_time }}-{{ item.end_time }}: {{ item.name }}</p> 
+    {% endfor %}
+  {% endfor %}
+{% endblock %}
