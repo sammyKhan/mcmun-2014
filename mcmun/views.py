@@ -8,8 +8,7 @@ from django.shortcuts import render, redirect
 
 from committees.forms import CommitteeAssignmentFormset, \
      DelegateAssignmentFormset
-from committees.models import DelegateAssignment
-from committees.utils import get_committee_from_email
+from committees.models import DelegateAssignment, Committee
 from mcmun.forms import RegistrationForm, ScholarshipForm, EventForm, \
      CommitteePrefsForm
 from mcmun.constants import MIN_NUM_DELEGATES, MAX_NUM_DELEGATES
@@ -94,7 +93,7 @@ def schedule(request):
 def dashboard(request):
     # If it's a dais member, redirect to that committee's position paper listing
     if request.user.username.endswith('@mcmun.org'):
-        dais_committee = get_committee_from_email(request.user.username)
+        dais_committee = Committee.objects.get(manager=request.user) 
         if dais_committee:
             return redirect(dais_committee)
 

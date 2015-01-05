@@ -10,7 +10,6 @@ from django.views.static import serve
 from committees.models import Committee, position_paper_upload_path
 from committees.forms import AdHocAppForm, EnronAppForm, CriminalCourtAppForm, \
      NcaaAppForm, NintendoAppForm, AwardAssignmentFormset
-from committees.utils import get_committee_from_email
 
 
 def view(request, slug):
@@ -91,7 +90,7 @@ def serve_papers(request, file_name):
         is_authorised = True
     elif request.user.username.endswith('@mcmun.org'):
         # Check the dais
-        committee = get_committee_from_email(request.user.username)
+        dais_committee = Committee.objects.get(manager=request.user)
         if committee and committee.committeeassignment_set.filter(position_paper=full_path):
             is_authorised = True
     else:
