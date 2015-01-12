@@ -53,6 +53,26 @@ def committees(request):
     return response
 
 def social_media(request):
-    response = render(request, "socialmedia.html")
+    response = render(request, "social-mob.html")
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
+
+def food(request):
+    response = render(request, "food-mob.html")
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
+
+def contact(request):
+    response = render(request, "contact-mob.html")
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
+
+def sponsors(request):
+    response = render(request, "sponsors-mob.html")
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
+
+def map(request):
+    response = render(request, "map-mob.html")
     response["Access-Control-Allow-Origin"] = "*"
     return response
