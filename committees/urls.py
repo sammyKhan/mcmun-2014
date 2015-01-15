@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 
-SLUG = r'^(?P<slug>[a-zA-Z0-9-]+)'
+SLUG = r'^(?P<slug>[a-zA-Z0-9-_]+)'
 
 urlpatterns = patterns('',
     # Redirect committees/ back to committees (show the page)
